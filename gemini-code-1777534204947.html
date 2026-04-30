@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meraki Estudio Creativo – Regalos Personalizados para Eventos en Murcia</title>
+  <meta name="description" content="Regalos personalizados para bodas, comuniones, bautizos y cumpleaños en Murcia. Llaveros, imanes, tazas, velas y mucho más. Producción propia, hecho con cariño. Pide tu presupuesto gratis." />
+  <meta name="keywords" content="regalos personalizados Murcia, detalles bodas Murcia, comuniones Murcia, bautizos Murcia, llaveros personalizados, imanes personalizados, detalles eventos Murcia" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #f7f3ec;
+      --cream-dark: #ede7dc;
+      --beige: #e8dfd0;
+      --gold: #c9a96e;
+      --gold-light: #e8c98a;
+      --gold-dark: #9e7a3f;
+      --red: #c9263a;
+      --red-light: #e63950;
+      --charcoal: #2c2420;
+      --brown-soft: #5c4033;
+      --text-body: #3d2e28;
+      --shadow: 0 8px 40px rgba(44,36,32,0.14);
+      --shadow-sm: 0 2px 16px rgba(44,36,32,0.08);
+      --wa-green: #25d366;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--text-body);overflow-x:hidden}
+
+    /* ── HEADER ── */
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(247,243,236,0.97);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(201,169,110,0.25);
+      padding:0 5%;
+      display:flex;align-items:center;justify-content:space-between;
+      height:100px; /* Aumentado para acomodar logo más grande */
+      transition:transform 0.3s ease;
+    }
+    .header-logo img{
+      height:85px;width:auto;object-fit:contain; /* Logo Meraki agrandado */
+      display:block;
+    }
+    nav{display:flex;align-items:center;gap:24px}
+    nav a{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;transition:color 0.2s}
+    nav a:hover{color:var(--gold-dark)}
+    .btn-wa-header{
+      background:var(--red);color:#fff!important;
+      padding:11px 22px;border-radius:50px;
+      font-size:0.76rem!important;letter-spacing:0.06em!important;
+      white-space:nowrap;transition:background 0.2s,transform 0.15s!important;
+    }
+    .btn-wa-header:hover{background:var(--red-light)!important;transform:translateY(-1px)}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .hamburger span{display:block;width:26px;height:2px;background:var(--charcoal);border-radius:2px;transition:all 0.3s}
+    .mobile-menu{display:none;position:fixed;top:82px;left:0;right:0;z-index:99;background:var(--cream);border-bottom:1px solid rgba(201,169,110,0.3);padding:20px 5% 26px;flex-direction:column;gap:15px;box-shadow:0 10px 30px rgba(0,0,0,0.1)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:0.9rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--beige)}
+
+    /* ── HERO ── */
+    .hero{
+      min-height:100vh;
+      display:flex;align-items:center;
+      position:relative;overflow:hidden;
+      padding:130px 5% 80px;
+      /* Fondo con el segundo logo como marca de agua */
+      background-image: url('image_0eac19.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 600px;
+      background-blend-mode: multiply;
+    }
+    
+    /* Capa de opacidad para el logo de fondo */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(247, 243, 236, 0.85); /* Controla qué tan visible es el logo de fondo */
+      z-index: 1;
+    }
+
+    .hero-overlay{
+      position:absolute;inset:0;
+      background:
+        linear-gradient(105deg,rgba(247,243,236,1) 0%,rgba(247,243,236,0.97) 40%,rgba(247,243,236,0.6) 68%,rgba(247,243,236,0.05) 100%),
+        radial-gradient(ellipse 55% 70% at 5% 85%,rgba(242,196,204,0.22) 0%,transparent 60%);
+      pointer-events:none;
+      z-index: 1;
+    }
+    .hero-content{
+        position:relative;
+        z-index:2;
+        max-width:570px;
+        background: rgba(247,243,236,0.4); /* Refuerzo de legibilidad */
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .hero-label{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.4);
+      border-radius:50px;padding:6px 16px;
+      font-size:0.73rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+      color:var(--gold-dark);margin-bottom:22px;
+    }
+    .hero-label::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);display:block;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.45;transform:scale(0.65)}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.9rem);line-height:1.11;color:var(--charcoal);margin-bottom:18px}
+    .hero h1 em{font-style:italic;color:var(--red)}
+    .hero-sub{font-size:clamp(0.97rem,1.8vw,1.1rem);line-height:1.78;color:var(--brown-soft);margin-bottom:26px;max-width:490px}
+    .hero-desde{
+      display:inline-block;
+      background:linear-gradient(135deg,var(--red),#e03550);
+      color:#fff;border-radius:10px;padding:10px 22px;
+      font-size:1rem;font-weight:700;margin-bottom:28px;
+      letter-spacing:0.02em;box-shadow:0 6px 20px rgba(201,38,58,0.3);
+    }
+    .hero-desde span{font-size:0.77rem;font-weight:400;opacity:0.88}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;text-decoration:none;padding:15px 30px;border-radius:50px;font-weight:700;font-size:0.92rem;letter-spacing:0.04em;box-shadow:0 8px 28px rgba(201,38,58,0.38);transition:all 0.25s;white-space:nowrap}
+    .btn-primary:hover{background:var(--red-light);transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,38,58,0.45)}
+    .btn-primary svg,.btn-wa-product svg,.btn-wa-big svg,.footer-wa svg{width:20px;height:20px;flex-shrink:0}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--charcoal);text-decoration:none;padding:15px 26px;border-radius:50px;border:1.5px solid rgba(44,36,32,0.22);font-weight:700;font-size:0.88rem;transition:all 0.2s}
+    .btn-secondary:hover{border-color:var(--gold);color:var(--gold-dark)}
+    .hero-stats{display:flex;gap:30px;margin-top:44px;padding-top:24px;border-top:1px solid rgba(201,169,110,0.3)}
+    .stat-num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--red)}
+    .stat-label{font-size:0.74rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--brown-soft)}
+
+    /* ── TRUST ── */
+    .trust-strip{background:var(--charcoal);padding:24px 5%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 42px}
+    .trust-item{display:flex;align-items:center;gap:9px;color:rgba(247,243,236,0.9)}
+    .trust-icon{font-size:1.3rem}
+    .trust-text{font-size:0.82rem;font-weight:700;letter-spacing:0.06em}
+    .trust-sep{color:var(--gold);opacity:0.4}
+
+    /* ── MERAKI MEANING ── */
+    .meraki-section{
+      background:var(--cream);
+      padding:100px 5%;
+      position:relative;overflow:hidden;
+    }
+    .meraki-section::before{
+      content:'meraki';
+      position:absolute;right:-2%;bottom:-10%;
+      font-family:'Dancing Script',cursive;
+      font-size:clamp(8rem,18vw,18rem);
+      color:rgba(201,38,58,0.04);
+      pointer-events:none;user-select:none;
+      line-height:1;
+    }
+    .meraki-grid{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:70px;align-items:center;
+      max-width:1100px;margin:0 auto;
+    }
+    .meraki-content{position:relative;z-index:2}
+    .meraki-greek{
+      font-family:'Dancing Script',cursive;
+      font-size:clamp(3rem,6vw,5.5rem);
+      color:var(--red);line-height:1;
+      margin-bottom:6px;
+      display:block;
+    }
+    .meraki-phonetic{
+      font-size:0.88rem;color:var(--gold-dark);
+      font-weight:700;letter-spacing:0.2em;
+      text-transform:uppercase;margin-bottom:28px;display:block;
+    }
+    .meraki-definition{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(1.3rem,2.5vw,1.75rem);
+      line-height:1.45;color:var(--charcoal);
+      margin-bottom:24px;
+      border-left:4px solid var(--red);
+      padding-left:22px;
+    }
+    .meraki-definition em{font-style:italic;color:var(--red)}
+    .meraki-body{font-size:1rem;line-height:1.85;color:var(--brown-soft);margin-bottom:14px}
+    .meraki-body strong{color:var(--charcoal)}
+    .meraki-pillars{
+      display:grid;grid-template-columns:1fr 1fr;
+      gap:14px;margin-top:30px;
+    }
+    .meraki-pillar{
+      background:var(--cream-dark);
+      border-radius:14px;padding:16px 18px;
+      border-left:3px solid var(--gold);
+    }
+    .meraki-pillar-icon{font-size:1.4rem;margin-bottom:6px;display:block}
+    .meraki-pillar-title{font-weight:700;font-size:0.9rem;color:var(--charcoal);margin-bottom:3px}
+    .meraki-pillar-text{font-size:0.8rem;color:var(--brown-soft);line-height:1.5}
+    .meraki-img-wrap{position:relative}
+    .meraki-img-wrap img{
+      width:100%;border-radius:22px;
+      object-fit:cover;aspect-ratio:3/4;
+      box-shadow:var(--shadow);
+    }
+    .meraki-logo-float{
+      position:absolute;top:-22px;right:-22px;
+      width:100px;height:100px;
+      background:#fff;border-radius:50%;
+      box-shadow:0 10px 36px rgba(44,36,32,0.15);
+      display:flex;align-items:center;justify-content:center;
+      padding:10px;
+    }
+    .meraki-logo-float img{width:100%;height:100%;object-fit:contain;border-radius:50%}
+    .meraki-quote{
+      position:absolute;bottom:-18px;left:-18px;
+      background:var(--red);color:#fff;
+      border-radius:16px;padding:16px 20px;
+      box-shadow:0 8px 28px rgba(201,38,58,0.35);
+      max-width:220px;
+    }
+    .meraki-quote p{font-family:'Dancing Script',cursive;font-size:1.05rem;line-height:1.4}
+    .meraki-quote span{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.75;margin-top:4px;display:block}
+
+    /* ── SECTIONS ── */
+    section{padding:88px 5%}
+    .section-tag{display:inline-block;font-size:0.71rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:12px}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.85rem,3.8vw,2.9rem);line-height:1.18;color:var(--charcoal);margin-bottom:16px}
+    .section-title em{font-style:italic;color:var(--red)}
+    .section-sub{font-size:1.02rem;line-height:1.75;color:var(--brown-soft);max-width:560px}
+
+    /* ── ABOUT ── */
+    .about-section{background:var(--cream-dark)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1100px;margin:0 auto}
+    .about-img-wrap{position:relative}
+    .about-img-wrap img{width:100%;border-radius:20px;object-fit:cover;aspect-ratio:4/5;box-shadow:var(--shadow)}
+    .about-img-badge{position:absolute;bottom:20px;right:-14px;background:var(--red);color:#fff;padding:13px 18px;border-radius:13px;box-shadow:0 8px 22px rgba(201,38,58,0.35)}
+    .about-img-badge strong{display:block;font-family:'Dancing Script',cursive;font-size:1.15rem}
+    .about-img-badge span{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.85}
+    .about-text{font-size:0.98rem;line-height:1.85;color:var(--brown-soft);margin-bottom:14px}
+    .about-values{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+    .about-value{background:rgba(201,169,110,0.14);border:1px solid rgba(201,169,110,0.35);border-radius:50px;padding:6px 15px;font-size:0.77rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-dark)}
+
+    /* ── PRODUCTS ── */
+    .products-section{background:var(--cream)}
+    .products-header{text-align:center;margin-bottom:50px}
+    .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:26px;max-width:1200px;margin:0 auto}
+    .product-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform 0.25s,box-shadow 0.25s}
+    .product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .product-img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--beige)}
+    .product-body{padding:19px 22px 22px}
+    .product-cat{font-size:0.67rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:5px}
+    .product-name{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--charcoal);margin-bottom:7px}
+    .product-desc{font-size:0.87rem;line-height:1.65;color:var(--brown-soft);margin-bottom:14px}
+    .pricing-table{width:100%;border-collapse:collapse;margin-bottom:16px;font-size:0.82rem}
+    .pricing-table th{text-align:left;font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);padding:4px 0;border-bottom:1px solid var(--beige)}
+    .pricing-table td{padding:5px 0;color:var(--text-body);border-bottom:1px solid rgba(232,223,208,0.5)}
+    .pricing-table td:last-child{text-align:right;font-weight:700;color:var(--red)}
+    .pricing-table tr.best-value td{background:rgba(201,38,58,0.04)}
+    .pricing-table tr.best-value td:first-child::after{content:' 🔥';font-size:0.72rem}
+    .product-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px}
+    .product-price-from{font-size:0.88rem;font-weight:700;color:var(--brown-soft)}
+    .product-price-from strong{color:var(--red);font-size:1.04rem}
+    .btn-wa-product{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;text-decoration:none;padding:9px 17px;border-radius:50px;font-size:0.79rem;font-weight:700;transition:all 0.2s;white-space:nowrap}
+    .btn-wa-product:hover{background:var(--red-light);transform:translateY(-1px)}
+    .btn-wa-product svg{width:15px;height:15px}
+
+    /* ── HOW ── */
+    .how-section{background:var(--charcoal);color:#fff}
+    .how-section .section-title{color:var(--cream)}
+    .how-section .section-sub{color:rgba(247,243,236,0.7)}
+    .how-header{text-align:center;margin-bottom:54px}
+    .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;max-width:1100px;margin:0 auto;position:relative}
+    .steps-grid::before{content:'';position:absolute;top:38px;left:12.5%;right:12.5%;height:1px;background:rgba(201,169,110,0.22)}
+    .step-card{text-align:center;position:relative;z-index:2}
+    .step-num{width:76px;height:76px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;background:var(--charcoal)}
+    .step-num-inner{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--gold)}
+    .step-icon{font-size:1.35rem;margin-bottom:11px;display:block}
+    .step-title{font-family:'Playfair Display',serif;font-size:1.02rem;color:var(--cream);margin-bottom:9px}
+    .step-desc{font-size:0.85rem;line-height:1.65;color:rgba(247,243,236,0.6)}
+
+    /* ── PACKS ── */
+    .packs-section{background:var(--cream-dark)}
+    .packs-header{text-align:center;margin-bottom:48px}
+    .packs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+    .pack-card{background:#fff;border-radius:22px;padding:34px 28px;box-shadow:var(--shadow-sm);position:relative;transition:transform 0.25s,box-shadow 0.25s;border:2px solid transparent}
+    .pack-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .pack-card.featured{border-color:var(--gold);transform:translateY(-8px);box-shadow:0 20px 56px rgba(44,36,32,0.17)}
+    .pack-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--charcoal);font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 16px;border-radius:50px;white-space:nowrap}
+    .pack-icon{font-size:2rem;margin-bottom:13px;display:block}
+    .pack-name{font-family:'Playfair Display',serif;font-size:1.33rem;color:var(--charcoal);margin-bottom:5px}
+    .pack-subtitle{font-size:0.77rem;color:var(--brown-soft);margin-bottom:16px;font-style:italic}
+    .pack-what{background:var(--cream-dark);border-radius:10px;padding:11px 14px;margin-bottom:14px}
+    .pack-what-title{font-size:0.69rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:7px}
+    .pack-products{display:flex;flex-wrap:wrap;gap:5px}
+    .pack-product-chip{background:#fff;border:1px solid var(--beige);border-radius:50px;padding:3px 10px;font-size:0.77rem;color:var(--text-body)}
+    .pack-prices{display:flex;align-items:center;gap:13px;margin-bottom:7px}
+    .pack-price-old{font-size:1rem;color:var(--brown-soft);text-decoration:line-through;opacity:0.55}
+    .pack-price-new{font-size:1.9rem;font-weight:700;color:var(--red)}
+    .pack-saving{display:inline-block;background:rgba(201,38,58,0.09);color:var(--red);border-radius:50px;padding:3px 12px;font-size:0.74rem;font-weight:700;margin-bottom:16px}
+    .pack-items{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:8px}
+    .pack-items li{display:flex;align-items:flex-start;gap:8px;font-size:0.87rem;color:var(--text-body);line-height:1.5}
+    .pack-items li::before{content:'✓';width:17px;height:17px;flex-shrink:0;background:rgba(201,38,58,0.09);color:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.67rem;font-weight:700;margin-top:1px}
+    .btn-pack{display:block;text-align:center;background:var(--red);color:#fff;text-decoration:none;padding:13px 22px;border-radius:50px;font-weight:700;font-size:0.87rem;transition:all 0.2s}
+    .btn-pack:hover{background:var(--red-light)}
+    .pack-card.featured .btn-pack{background:var(--gold);color:var(--charcoal);box-shadow:0 6px 22px rgba(201,169,110,0.4)}
+    .pack-card.featured .btn-pack:hover{background:var(--gold-light)}
+
+    /* ── EMOTIONAL ── */
+    .emotional-section{background:linear-gradient(135deg,var(--red) 0%,#a01c2d 100%);color:#fff;text-align:center;padding:88px 5%;position:relative;overflow:hidden}
+    .emotional-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 0%,rgba(255,255,255,0.07) 0%,transparent 70%);pointer-events:none}
+    .emotional-logo{height:72px;margin:0 auto 22px;display:block;opacity:0.2;border-radius:50%}
+    .emotional-section .section-title{color:#fff;max-width:680px;margin:0 auto 18px}
+    .emotional-section .section-title em{color:var(--gold-light)}
+    .emotional-text{font-size:1.06rem;line-height:1.85;color:rgba(255,255,255,0.83);max-width:580px;margin:0 auto 32px}
+    .btn-wa-big{display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--red);text-decoration:none;padding:18px 42px;border-radius:50px;font-weight:700;font-size:1.02rem;box-shadow:0 12px 38px rgba(0,0,0,0.2);transition:all 0.25s}
+    .btn-wa-big:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(0,0,0,0.28)}
+    .emotional-note{font-size:0.79rem;color:rgba(255,255,255,0.56);margin-top:13px}
+
+    /* ── GALLERY ── */
+    .gallery-strip{background:var(--cream);padding:54px 5%}
+    .gallery-strip h2{font-family:'Playfair Display',serif;font-size:1.72rem;color:var(--charcoal);text-align:center;margin-bottom:32px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:auto auto;gap:13px;max-width:1100px;margin:0 auto}
+    .gallery-item{border-radius:13px;overflow:hidden}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
+    .gallery-item:hover img{transform:scale(1.04)}
+    .gallery-item.tall{grid-row:span 2}
+
+    /* ── FOOTER ── */
+    footer{background:var(--charcoal);color:rgba(247,243,236,0.7);padding:50px 5% 28px}
+    .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+    .footer-brand img{height:54px;margin-bottom:14px;border-radius:6px}
+    .footer-brand p{font-size:0.85rem;line-height:1.75;max-width:290px}
+    .footer-col h4{font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:13px}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+    .footer-col ul li a{color:rgba(247,243,236,0.6);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-col ul li a:hover{color:var(--gold)}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .footer-bottom p{font-size:0.77rem}
+    .footer-wa{display:inline-flex;align-items:center;gap:7px;background:var(--wa-green);color:#fff;text-decoration:none;padding:9px 18px;border-radius:50px;font-size:0.79rem;font-weight:700;transition:opacity 0.2s}
+    .footer-wa:hover{opacity:0.9}
+
+    /* ── WA FLOAT ── */
+    .wa-float{position:fixed;bottom:26px;right:26px;z-index:200}
+    .wa-float-btn{width:58px;height:58px;background:var(--wa-green);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 28px rgba(37,211,102,0.5);text-decoration:none;animation:wa-bounce 3s ease-in-out infinite}
+    @keyframes wa-bounce{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+    .wa-float-btn:hover{transform:scale(1.1)!important;animation:none}
+    .wa-float-btn svg{width:28px;height:28px}
+
+    /* ── FADE-IN ── */
+    .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .fade-in.visible{opacity:1;transform:none}
+    .fade-in-delay-1{transition-delay:0.1s}
+    .fade-in-delay-2{transition-delay:0.2s}
+    .fade-in-delay-3{transition-delay:0.3s}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      .steps-grid{grid-template-columns:repeat(2,1fr)}
+      .steps-grid::before{display:none}
+      .packs-grid{grid-template-columns:1fr;max-width:460px}
+      .pack-card.featured{transform:none}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-brand{grid-column:span 2}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .meraki-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:768px){
+      header{height:90px}
+      .header-logo img{height:70px}
+      nav{display:none}
+      .hamburger{display:flex}
+      .hero{padding:100px 5% 55px;text-align:center; background-size: 400px;}
+      .hero-logo-bg{display:none}
+      .hero-overlay{background:linear-gradient(180deg,rgba(247,243,236,0.98) 0%,rgba(247,243,236,0.9) 60%,rgba(247,243,236,0.7) 100%)}
+      .hero-content{max-width:100%}
+      .hero-ctas{justify-content:center}
+      .hero-stats{justify-content:center;gap:22px}
+      .about-grid{grid-template-columns:1fr}
+      .about-img-badge{right:14px}
+      .steps-grid{grid-template-columns:1fr 1fr;gap:18px}
+      .footer-grid{grid-template-columns:1fr}
+      .footer-brand{grid-column:1}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-item.tall{grid-row:span 1}
+      .meraki-pillars{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .hero h1{font-size:1.9rem}
+      .hero{background-size: 300px;}
+      .steps-grid{grid-template-columns:1fr}
+      .trust-strip{flex-direction:column;gap:13px;text-align:center}
+      .trust-sep{display:none}
+      .products-grid{grid-template-columns:1fr}
+      .wa-float{bottom:14px;right:14px}
+    }
+  </style>
+</head>
+<body>
+
+<header id="mainHeader">
+  <a href="#inicio" class="header-logo">
+    <img src="data:image/jpeg;base64,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#222; alt="Meraki Estudio Creativo">
+  </a>
+  
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#productos">Detalles</a>
+    <a href="#packs">Packs</a>
+    <a href="#como-funciona">Cómo Pedir</a>
+    <a href="https://wa.me/34622241607" class="btn-wa-header">WhatsApp Directo</a>
+  </nav>
+
+  <button class="hamburger" id="menuBtn">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio">Inicio</a>
+  <a href="#productos">Detalles</a>
+  <a href="#packs">Packs</a>
+  <a href="#como-funciona">Cómo Pedir</a>
+</div>
+
+<section class="hero" id="inicio">
+  <div class="hero-overlay"></div>
+  
+  <div class="hero-content fade-in visible">
+    <div class="hero-label">Producción propia en Murcia</div>
+    <h1>Regalos que <em>emocionan</em></h1>
+    <p class="hero-sub">Creamos detalles personalizados con alma para que tus eventos sean inolvidables. Hecho a mano, con amor y mucha dedicación.</p>
+    
+    <div class="hero-desde">
+      <span>Desde</span> 1,20€ <span>/ ud.</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="https://wa.me/34622241607" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+        Pide presupuesto gratis
+      </a>
+      <a href="#productos" class="btn-secondary">Ver catálogo</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">+500</div>
+        <div class="stat-label">Eventos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Artesanal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="trust-item">
+    <span class="trust-icon">✨</span>
+    <span class="trust-text">DISEÑOS EXCLUSIVOS</span>
+  </div>
+  <span class="trust-sep">|</span>
+  <div class="trust-item">
+    <span class="trust-icon">🚚</span>
+    <span class="trust-text">RECOGIDA EN MURCIA / ENVÍOS</span>
+  </div>
+  <span class="trust-sep">|</span>
+  <div class="trust-item">
+    <span class="trust-icon">🎨</span>
+    <span class="trust-text">PERSONALIZACIÓN TOTAL</span>
+  </div>
+</div>
+
+<section class="meraki-section" id="filosofia">
+  <div class="meraki-grid">
+    <div class="meraki-content fade-in">
+      <span class="meraki-greek">μεράκι</span>
+      <span class="meraki-phonetic">[MAY-RAH-KEE]</span>
+      <h2 class="meraki-definition">Hacer algo con <em>amor, alma y creatividad</em>, dejando una parte de ti en lo que haces.</h2>
+      
+      <p class="meraki-body">En <strong>Meraki Estudio Creativo</strong>, esta palabra no es solo nuestro nombre, es nuestra forma de trabajar. No fabricamos objetos en serie; creamos <strong>recuerdos tangibles</strong>.</p>
+      
+      <p class="meraki-body">Cada vela que vertemos, cada llavero que grabamos y cada diseño que trazamos en nuestro estudio de Murcia lleva esa esencia. Porque sabemos que ese detalle no es solo un regalo, es el agradecimiento a las personas que más quieres.</p>
+
+      <div class="meraki-pillars">
+        <div class="meraki-pillar">
+          <span class="meraki-pillar-icon">✍️</span>
+          <div class="meraki-pillar-title">Hecho a Mano</div>
+          <div class="meraki-pillar-text">Controlamos cada paso del proceso en nuestro taller.</div>
+        </div>
+        <div class="meraki-pillar">
+          <span class="meraki-pillar-icon">🌿</span>
+          <div class="meraki-pillar-title">Materiales Nobles</div>
+          <div class="meraki-pillar-text">Madera, cera de soja y acabados de alta calidad.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meraki-img-wrap fade-in">
+        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35ca?auto=format&fit=crop&q=80&w=800" alt="Proceso creativo Meraki">
+      <div class="meraki-logo-float">
+        <img src="image_0eac19.png" alt="Meraki Logo">
+      </div>
+      <div class="meraki-quote">
+        <p>"Los mejores regalos no se compran, se crean con el corazón."</p>
+        <span>— Nuestra Filosofía</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="sobre-mi">
+  <div class="about-grid">
+    <div class="about-img-wrap fade-in">
+      <img src="https://images.unsplash.com/photo-1488998427799-e3362cea511f?auto=format&fit=crop&q=80&w=800" alt="Creadora de Meraki">
+      <div class="about-img-badge">
+        <strong>Laura</strong>
+        <span>Fundadora</span>
+      </div>
+    </div>
+    <div class="about-content fade-in">
+      <span class="section-tag">Detrás de la marca</span>
+      <h2 class="section-title">¡Hola! Soy la mente inquieta tras <em>Meraki</em></h2>
+      <p class="about-text">Hace años decidí convertir mi pasión por el diseño y las manualidades en un estudio donde la personalización fuera real. Me encanta sentarme con cada cliente, escuchar su idea y buscar la forma de hacerla realidad.</p>
+      <p class="about-text">Desde Murcia, trabajo día a día para que cuando entregues un detalle de Meraki, sientas el mismo orgullo que yo al fabricarlo. Mi objetivo es que tus invitados se lleven a casa algo que realmente quieran conservar.</p>
+      
+      <div class="about-values">
+        <span class="about-value">Pasión</span>
+        <span class="about-value">Cercanía</span>
+        <span class="about-value">Detalle</span>
+        <span class="about-value">Originalidad</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products-section" id="productos">
+  <div class="products-header fade-in">
+    <span class="section-tag">Nuestro Catálogo</span>
+    <h2 class="section-title">Detalles que <em>cuentan historias</em></h2>
+    <p class="section-sub">Explora nuestras piezas más queridas. Todo es 100% personalizable con nombres, fechas o frases especiales.</p>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card fade-in">
+      <img src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&q=80&w=600" alt="Velas Personalizadas" class="product-img">
+      <div class="product-body">
+        <span class="product-cat">Aroma & Hogar</span>
+        <h3 class="product-name">Velas de Soja Artesanales</h3>
+        <p class="product-desc">Velas naturales en tarro de cristal o latita, con aromas premium y etiquetas personalizadas.</p>
+        
+        <table class="pricing-table">
+          <thead><tr><th>Cantidad</th><th>Precio/ud.</th></tr></thead>
+          <tbody>
+            <tr><td>10-30 uds.</td><td>3,50€</td></tr>
+            <tr class="best-value"><td>+50 uds.</td><td>2,90€</td></tr>
+          </tbody>
+        </table>
+
+        <div class="product-footer">
+          <div class="product-price-from">Desde <strong>2,90€</strong></div>
+          <a href="https://wa.me/34622241607?text=Hola!%20Me%20interesan%20las%20velas%20personalizadas" class="btn-wa-product">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+            Consultar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <img src="https://images.unsplash.com/photo-1584282479204-74c65e89966d?auto=format&fit=crop&q=80&w=600" alt="Llaveros Madera" class="product-img">
+      <div class="product-body">
+        <span class="product-cat">Madera Grabada</span>
+        <h3 class="product-name">Llaveros de Madera</h3>
+        <p class="product-desc">Grabados a láser con vuestros nombres, iniciales o un diseño especial. El detalle más útil y natural.</p>
+        
+        <table class="pricing-table">
+          <thead><tr><th>Cantidad</th><th>Precio/ud.</th></tr></thead>
+          <tbody>
+            <tr><td>25-50 uds.</td><td>1,80€</td></tr>
+            <tr class="best-value"><td>+100 uds.</td><td>1,45€</td></tr>
+          </tbody>
+        </table>
+
+        <div class="product-footer">
+          <div class="product-price-from">Desde <strong>1,45€</strong></div>
+          <a href="https://wa.me/34622241607?text=Hola!%20Me%20interesan%20los%20llaveros%20de%20madera" class="btn-wa-product">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+            Consultar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card fade-in">
+      <img src="https://images.unsplash.com/photo-1533134486753-c833f0ed4866?auto=format&fit=crop&q=80&w=600" alt="Imanes Personalizados" class="product-img">
+      <div class="product-body">
+        <span class="product-cat">Imprescindibles</span>
+        <h3 class="product-name">Imanes de Madera/Acrílico</h3>
+        <p class="product-desc">Imanes grabados o impresos a color. Un recordatorio perfecto que siempre estará a la vista.</p>
+        
+        <table class="pricing-table">
+          <thead><tr><th>Cantidad</th><th>Precio/ud.</th></tr></thead>
+          <tbody>
+            <tr><td>20-50 uds.</td><td>1,50€</td></tr>
+            <tr class="best-value"><td>+80 uds.</td><td>1,20€</td></tr>
+          </tbody>
+        </table>
+
+        <div class="product-footer">
+          <div class="product-price-from">Desde <strong>1,20€</strong></div>
+          <a href="https://wa.me/34622241607?text=Hola!%20Me%20interesan%20los%20imanes%20personalizados" class="btn-wa-product">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+            Consultar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section" id="como-funciona">
+  <div class="how-header fade-in">
+    <span class="section-tag">Proceso</span>
+    <h2 class="section-title">¿Cómo crear tu <em>regalo Meraki</em>?</h2>
+    <p class="section-sub">Queremos que sea sencillo y emocionante para ti.</p>
+  </div>
+
+  <div class="steps-grid">
+    <div class="step-card fade-in">
+      <div class="step-num"><div class="step-num-inner">01</div></div>
+      <span class="step-icon">💬</span>
+      <h3 class="step-title">Escríbenos</h3>
+      <p class="step-desc">Cuéntanos qué producto te gusta, cuántas unidades necesitas y la fecha de tu evento por WhatsApp.</p>
+    </div>
+    <div class="step-card fade-in fade-in-delay-1">
+      <div class="step-num"><div class="step-num-inner">02</div></div>
+      <span class="step-icon">🎨</span>
+      <h3 class="step-title">Personalizamos</h3>
+      <p class="step-desc">Te enviamos una propuesta de diseño digital para que veas cómo quedará antes de fabricar nada.</p>
+    </div>
+    <div class="step-card fade-in fade-in-delay-2">
+      <div class="step-num"><div class="step-num-inner">03</div></div>
+      <span class="step-icon">🛠️</span>
+      <h3 class="step-title">Fabricamos</h3>
+      <p class="step-desc">Una vez confirmado el diseño, nos ponemos manos a la obra en nuestro estudio de Murcia.</p>
+    </div>
+    <div class="step-card fade-in fade-in-delay-3">
+      <div class="step-num"><div class="step-num-inner">04</div></div>
+      <span class="step-icon">📦</span>
+      <h3 class="step-title">Recogida o Envío</h3>
+      <p class="step-desc">Puedes recoger tu pedido en Murcia o te lo enviamos a casa perfectamente protegido.</p>
+    </div>
+  </div>
+</section>
+
+<section class="packs-section" id="packs">
+  <div class="packs-header fade-in">
+    <span class="section-tag">Ahorra con nuestros conjuntos</span>
+    <h2 class="section-title">Packs de <em>Celebración</em></h2>
+    <p class="section-sub">Hemos diseñado estos packs para facilitarte la elección y ofrecerte el mejor precio.</p>
+  </div>
+
+  <div class="packs-grid">
+    <div class="pack-card fade-in">
+      <span class="pack-icon">🌱</span>
+      <h3 class="pack-name">Pack Esencial</h3>
+      <p class="pack-subtitle">Ideal para bautizos y comuniones</p>
+      
+      <div class="pack-what">
+        <div class="pack-what-title">Incluye:</div>
+        <div class="pack-products">
+          <span class="pack-product-chip">Imán madera</span>
+          <span class="pack-product-chip">Tarjeta personalizada</span>
+          <span class="pack-product-chip">Bolsita kraft</span>
+        </div>
+      </div>
+
+      <div class="pack-prices">
+        <span class="pack-price-old">1,90€</span>
+        <span class="pack-price-new">1,60€</span>
+      </div>
+      <span class="pack-saving">Ahorras un 15%</span>
+
+      <ul class="pack-items">
+        <li>Grabado láser incluido</li>
+        <li>Boceto digital previo</li>
+        <li>Mínimo 25 unidades</li>
+      </ul>
+
+      <a href="https://wa.me/34622241607?text=Hola!%20Me%20interesa%20el%20Pack%20Esencial" class="btn-pack">Lo quiero</a>
+    </div>
+
+    <div class="pack-card featured fade-in">
+      <div class="pack-badge">El más vendido</div>
+      <span class="pack-icon">✨</span>
+      <h3 class="pack-name">Pack Meraki Luxe</h3>
+      <p class="pack-subtitle">La opción favorita para bodas</p>
+      
+      <div class="pack-what">
+        <div class="pack-what-title">Incluye:</div>
+        <div class="pack-products">
+          <span class="pack-product-chip">Vela aromática</span>
+          <span class="pack-product-chip">Llavero grabado</span>
+          <span class="pack-product-chip">Packaging artesanal</span>
+        </div>
+      </div>
+
+      <div class="pack-prices">
+        <span class="pack-price-old">5,50€</span>
+        <span class="pack-price-new">4,80€</span>
+      </div>
+      <span class="pack-saving">Ahorras un 12%</span>
+
+      <ul class="pack-items">
+        <li>Etiquetas de papel texturizado</li>
+        <li>Lazo de algodón orgánico</li>
+        <li>Diseño de logo personalizado</li>
+        <li>Mínimo 30 unidades</li>
+      </ul>
+
+      <a href="https://wa.me/34622241607?text=Hola!%20Me%20interesa%20el%20Pack%20Meraki%20Luxe" class="btn-pack">Reservar pack</a>
+    </div>
+
+    <div class="pack-card fade-in">
+      <span class="pack-icon">🥂</span>
+      <h3 class="pack-name">Pack Brindis</h3>
+      <p class="pack-subtitle">Detalles con mucha utilidad</p>
+      
+      <div class="pack-what">
+        <div class="pack-what-title">Incluye:</div>
+        <div class="pack-products">
+          <span class="pack-product-chip">Abrebotellas madera</span>
+          <span class="pack-product-chip">Imán decorativo</span>
+          <span class="pack-product-chip">Cajita personalizada</span>
+        </div>
+      </div>
+
+      <div class="pack-prices">
+        <span class="pack-price-old">4,20€</span>
+        <span class="pack-price-new">3,50€</span>
+      </div>
+      <span class="pack-saving">Ahorras un 16%</span>
+
+      <ul class="pack-items">
+        <li>Grabado a dos caras</li>
+        <li>Montaje completo incluido</li>
+        <li>Mínimo 20 unidades</li>
+      </ul>
+
+      <a href="https://wa.me/34622241607?text=Hola!%20Me%20interesa%20el%20Pack%20Brindis" class="btn-pack">Información</a>
+    </div>
+  </div>
+</section>
+
+<section class="emotional-section">
+  <img src="image_0eac19.png" alt="Meraki Logo" class="emotional-logo">
+  <h2 class="section-title">¿Hacemos que tu evento sea <em>inolvidable</em>?</h2>
+  <p class="emotional-text">No dejes para el último día los detalles de tu gran momento. Estamos en Murcia listos para crear algo único para ti.</p>
+  
+  <a href="https://wa.me/34622241607" class="btn-wa-big">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+    Hablar por WhatsApp ahora
+  </a>
+  
+  <p class="emotional-note">Respondemos en menos de 24h laborables.</p>
+</section>
+
+<div class="gallery-strip">
+    <h2>Inspiración de nuestro taller</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1590487988256-9ed24133863e?auto=format&fit=crop&q=80&w=600" alt="Detalle vela"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1491243950741-97e9ad683418?auto=format&fit=crop&q=80&w=600" alt="Trabajo madera"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&q=80&w=600" alt="Empaquetado"></div>
+      <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1473187983305-f615310e7daa?auto=format&fit=crop&q=80&w=600" alt="Regalo comunión"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511553677255-ba939e5537e0?auto=format&fit=crop&q=80&w=600" alt="Boda Murcia"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=600" alt="Celebración"></div>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="image_0eac19.png" alt="Meraki Footer Logo">
+      <p>Estudio de regalos personalizados y detalles artesanales. Hecho en Murcia para personas de todo el mundo.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#packs">Packs Ahorro</a></li>
+        <li><a href="#sobre-mi">Sobre Mí</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li>Murcia, España</li>
+        <li>meraki.estudiocreativo@gmail.com</li>
+        <li>Instagram: @meraki.estudiocreativo</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Meraki Estudio Creativo. Todos los derechos reservados.</p>
+    <a href="https://wa.me/34622241607" class="footer-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+        WhatsApp Directo
+    </a>
+  </div>
+</footer>
+
+<div class="wa-float">
+  <a href="https://wa.me/34622241607" class="wa-float-btn" target="_blank">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.757-2.874-2.513-2.96-2.63-.086-.117-.693-.923-.693-1.762 0-.839.435-1.252.588-1.427.154-.175.339-.219.452-.219.113 0 .226.001.325.005.102.005.239-.038.375.291.139.336.477 1.163.518 1.248.041.085.068.184.01.303-.058.118-.087.193-.174.296-.087.102-.183.228-.261.307-.097.098-.2.205-.086.402.113.197.502.831 1.08 1.347.745.666 1.37.873 1.567.971.197.098.312.082.426-.049.113-.131.488-.567.618-.762.131-.194.262-.163.442-.098.179.066 1.142.538 1.339.636.197.098.328.147.377.23.049.082.049.475-.095.88z"/></svg>
+  </a>
+</div>
+
+<script>
+  // Mobile Menu Toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    menuBtn.classList.toggle('active');
+  });
+
+  // Fade-in animation on scroll
+  const observerOptions = {
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    if (window.scrollY > 50) {
+      header.style.padding = '0 5%';
+      header.style.height = '80px';
+    } else {
+      header.style.height = '100px';
+    }
+  });
+</script>
+
+</body>
+</html>
